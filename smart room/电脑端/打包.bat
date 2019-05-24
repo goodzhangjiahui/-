@@ -1,0 +1,1 @@
+pyinstaller -F -w goodzjh_10_24.py 

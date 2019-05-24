@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.smartroom">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/znjj"
+        android:label="智能宿舍"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <service
+            android:name=".MyMqttService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".TimetaskActivity" />
+        <activity android:name=".WaringActivity" />
+        <activity android:name=".THPActivity" />
+        <activity android:name=".FanActivity" />
+        <activity android:name=".KeyActivity" />
+        <activity android:name=".EsptouchDemoActivity"/>
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" /> <!-- Mqtt服务 -->
+        <service android:name="org.eclipse.paho.android.service.MqttService" />
+    </application>
+
+</manifest>
